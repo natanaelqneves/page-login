@@ -1,6 +1,5 @@
 package com.nqn.modelo;
 
-import com.nqn.dto.DadosUsuario;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,17 +13,25 @@ public class Usuario {
     private Long id;
     private String nome;
     private String email;
-    private String nomeDeUsuario;
+    private String matricula;
     private String senha;
 
     public Usuario() {
     }
 
-    public Usuario(DadosUsuario dados) {
-        this.nome = dados.nome();
-        this.email = dados.email();
-        this.nomeDeUsuario = dados.nomeDeUsuario();
-        this.senha = dados.senha();
+    public Usuario(String nome, String email, String matricula, String senha) {
+        this.nome = nome;
+        this.email = email;
+        this.matricula = matricula;
+        this.senha = senha;
+    }
+
+    public Usuario(Long id, String nome, String email, String matricula, String senha) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.matricula = matricula;
+        this.senha = senha;
     }
 
     public Long getId() {
@@ -51,12 +58,12 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getNomeDeUsuario() {
-        return nomeDeUsuario;
+    public String getMatricula() {
+        return matricula;
     }
 
-    public void setNomeDeUsuario(String nomeDeUsuario) {
-        this.nomeDeUsuario = nomeDeUsuario;
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 
     public String getSenha() {
